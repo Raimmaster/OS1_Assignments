@@ -39,22 +39,6 @@ mainloop:
    mov al, 0x0A
    int 0x10		
 
-   ;mov si, buffer
-   ;cmp byte [si], 0  
-   ;je mainloop       
- 
-   ; mov si, buffer
-   ; mov di, cmd_hi  
-   ; call strcmp
-   ; jc .helloworld
- 
-   ; mov si, buffer
-   ; mov di, cmd_help
-   ; call strcmp
-   ; jc .help
- 
-   ; mov si, badcommand
-   ; call print_string 
    jmp mainloop 
 
 
@@ -62,9 +46,9 @@ mainloop:
  welcome db 'Sum of numbers!', 0x0D, 0x0A, 0
  prompt db 'Insert number 1: ', 0
  second_prompt db 'Insert number 2: ', 0
- buffer times 32 db 0
- buffer_two times 32 db 0
- answer_buffer times 32 db 0
+ buffer times 6 db 0
+ buffer_two times 6 db 0
+ answer_buffer times 6 db 0
 
 
 ; functions
