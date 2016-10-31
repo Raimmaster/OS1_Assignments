@@ -45,10 +45,10 @@ int main(int argc, char const *argv[])
   {
     // printf("This is the child process. My pid is %d and my parent's id is %d.\n", getpid(), getppid());
 
-    for(j = 0; j < arr_size; j++)
-    {
-      printf("Nuovi: %s\n", subset[j]);
-    }
+    // for(j = 0; j < arr_size; j++)
+    // {
+      // printf("Nuovi: %s\n", subset[j]);
+    // }
 
     return execvp("./sort", subset);
   }
@@ -67,7 +67,8 @@ int main(int argc, char const *argv[])
 
     qsort(status_arr, num_forks, sizeof(int), cmpfunc);
     printf("The greatest of greatest is: %d\n", status_arr[num_forks-1]);
-
+    free(status_arr);
+    free(subset);
     exit(0);
   }
   return 0;
