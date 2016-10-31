@@ -32,10 +32,6 @@ int main(int argc, char const *argv[])
           subset[j] = values[i*arr_size+j];
 
         subset[arr_size] = '\0';
-        for(j = 0; j < arr_size; j++)
-        {
-          // printf("Nuovi %d: %s\n", i, subset[j]);
-        }
 
         pid = fork();
       }
@@ -43,13 +39,6 @@ int main(int argc, char const *argv[])
 
   if(pid == 0)
   {
-    // printf("This is the child process. My pid is %d and my parent's id is %d.\n", getpid(), getppid());
-
-    // for(j = 0; j < arr_size; j++)
-    // {
-      // printf("Nuovi: %s\n", subset[j]);
-    // }
-
     return execvp("./sort", subset);
   }
   else
@@ -62,7 +51,6 @@ int main(int argc, char const *argv[])
     {
         cpid = wait(&status);
         status_arr[i] = WEXITSTATUS(status);
-        // status[i] = stat;
     }
 
     qsort(status_arr, num_forks, sizeof(int), cmpfunc);
