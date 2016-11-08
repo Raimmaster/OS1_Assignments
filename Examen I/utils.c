@@ -51,7 +51,6 @@ int connect_msgq(int key){
 		perror("msgget");
 		exit(1);
 	}
-	printf("Connecting to mq: %d with key: %d\n", msgqid, key);
 	return msgqid;
 }
 
@@ -60,5 +59,4 @@ void delete_msgq(int msgqid){
 		perror("msgctl");
 		exit(1);
 	}
-	printf("msgq deleted %d\n", msgqid);
 }
