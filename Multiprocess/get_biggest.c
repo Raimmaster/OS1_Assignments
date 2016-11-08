@@ -39,10 +39,12 @@ int main(int argc, char const *argv[])
 
   if(pid == 0)
   {
+    printf("My pid is %d and my father is %d\n", getpid(), getppid());
     return execvp("./sort", subset);
   }
   else
   {
+    printf("My child is %d and my pid is %d\n", pid, getpid());
     int cpid = 0;
     short i = 0;
     int status = 0;
