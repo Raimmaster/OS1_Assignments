@@ -17,13 +17,6 @@ typedef struct msgqbuf
   } info;
 } mbuf_t;
 
-typedef struct msg_qbuf
-{
-  long mtype;
-  char mssg[20];
-} mbuffer_t;
-
-
 void send_message(int msgqid, mbuf_t* sbuf, long mytype){
  	size_t length = strlen(sbuf->info.mssg)+5;
  	sbuf->mtype = mytype; 
@@ -63,22 +56,9 @@ int connect_msgq(int key){
 }
 
 void delete_msgq(int msgqid){
-	//return;
 	if (msgctl(msgqid, IPC_RMID, NULL) == -1) {
 		perror("msgctl");
 		exit(1);
 	}
 	printf("msgq deleted %d\n", msgqid);
 }
-
-/*void send_message(char* message, int msgq_id){
-	mbuf_t msg_buf;
-	msg_buf.mtype = 2;
-	bzero(msg_buf.info.mssg, 20);
-	
-	strcpy(msg_buf.info.mssg, message);
-	int len = strlen(msg_buf.info.mssg);
-
-	if (msgsnd(msgq_id, &msg_buf, len+1, 0) == -1)
-		perror("msgsnd");
-}*/

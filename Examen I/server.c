@@ -20,29 +20,24 @@ int main(int argc, char *argv[])
 	srand(time(NULL));
 	msqid = create_msgq(key);
 	mbuf_t *msg_buf = malloc(sizeof(mbuf_t));
-		//receive_message(msqid, sbuf, 2);
-	//printf("recibio %s\n", sbuf->info.mssg);
+
 	data_t local_players;
 	local_players.player_one=0;
 	local_players.player_two=0;
 	while(1) {
 		bzero(msg_buf->info.mssg, 20);
 		receive_message(msqid, msg_buf, 2);
-        printf("Received: \"Player: %d num: %s\"\n", msg_buf->info.player_pid, msg_buf->info.mssg);
+        printf("Received: \"Player: %d with message: %s\"\n", msg_buf->info.player_pid, msg_buf->info.mssg);
         sleep(1);
         int reason = strcmp(msg_buf->info.mssg, "connect");
         if(reason == 0){
         	++players_connected;
-        	printf("entro en reason\n");       	
-	        if(players_connected == 2){
-	        	printf("entro en create thread\n");
-        		local_players.player_two = msg_buf->info.player_pid;
+            if(players_connected == 2){
+	    		local_players.player_two = msg_buf->info.player_pid;
 	        	create_game_thread(&local_players);
 	        	restart_player_counters(&players_connected, &local_players);
 	        }else{
-	        	printf("entro en reason1\n"); 
 	        	if(local_players.player_one == 0){
-	        		printf("entro en reason2\n"); 
 	        		local_players.player_one = msg_buf->info.player_pid;
 	        	}
 	        }

@@ -17,9 +17,7 @@ int main(int argc, char *argv[])
 	msgqid = create_msgq(key);
 	
 	buf->info.player_pid = key;
-	printf("About to connect, dude!\n");
 	connect_to_server(connect_msgq(SERVER_KEY));
-	printf("Connected yo!\n");
 	
 	bzero(buf->info.mssg, 20);
 	receive_message(msgqid, buf, 1);
@@ -33,6 +31,7 @@ int main(int argc, char *argv[])
 
 	sleep(1);
 	free(buf);
+	delete_msgq(msgqid);
 	printf("Game!\n");
 	return 0;
 }
