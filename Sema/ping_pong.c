@@ -40,13 +40,13 @@ int main(int argc, char * argv[])
     pthread_t ping_thread, pong_thread;
     int value = 5;
     int val2 = 10;
-    if(pthread_create(&ping, NULL, ping_thread, (void*)&value))
+    if(pthread_create(&ping_thread, NULL, ping, (void*)&value))
     {
       printf("\n ERROR creating thread ping");
       exit(1);
     }
 
-    if(pthread_create(&pong, NULL, pong_thread, (void*)&val2))
+    if(pthread_create(&pong_thread, NULL, pong, (void*)&val2))
     {
       printf("\n ERROR creating thread pong");
       exit(1);
