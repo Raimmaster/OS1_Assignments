@@ -5,7 +5,7 @@
 #include <semaphore.h>
 
 #define BUFF_SIZE 5
-#define QUANT_PROD 1
+#define QUANT_PROD 5
 #define QUANT_CONSUM 5
 #define QUANT_ITEMS 4
 
@@ -69,21 +69,19 @@ void create_consumers(pthread_t* t_consumer){
 
 void* producer_func(void* args){
 	int p_index = *(int*)args;
-	int i, item;
-	for (i = 0; i < QUANT_ITEMS * QUANT_CONSUM; ++i)
+	int i;
+	for (i = 0; i < QUANT_ITEMS /* QUANT_CONSUM*/; ++i)
 	{
-		item = i;
 		sem_wait(&shared_struct.empty_slots);
 		pthread_mutex_lock(&shared_struct.mutex);
-		shared_struct.buffer[shared_struct.index_first_empty_slot] = item;
+		shared_struct.buffer[shared_struct.index_first_empty_slot] = i;
 		shared_struct.index_first_empty_slot = 
 			(shared_struct.index_first_empty_slot + 1) % BUFF_SIZE;
-		printf("***\tProducer: %d making %d\n", p_index, item);
+		printf("***\tProducer: %d making %d\n", p_index, i);
 		fflush(stdout);
 		pthread_mutex_unlock(&shared_struct.mutex);
 		sem_post(&shared_struct.full_slots);
-		if(!(i % 2))
-			sleep(1);
+		sleep(1);
 	}
 }
 
@@ -101,7 +99,6 @@ void* consumer_func(void* args){
 		fflush(stdout);
 		pthread_mutex_unlock(&shared_struct.mutex);
 		sem_post(&shared_struct.empty_slots);
-		if(!(i % 2))
-			sleep(1);
+		sleep(1);
 	}
 }
