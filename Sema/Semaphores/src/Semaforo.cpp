@@ -1,6 +1,6 @@
 #include "Semaforo.h"
 
-Semaforo::Semaforo(int value)
+Semaforo::Semaforo()
 {
     //ctor
 }

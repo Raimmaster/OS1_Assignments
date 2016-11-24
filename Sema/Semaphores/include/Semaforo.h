@@ -1,6 +1,8 @@
 #ifndef SEMAFORO_H
 #define SEMAFORO_H
 
+#include "Mutex.h"
+#include "Cond.h"
 
 class Semaforo
 {
@@ -8,7 +10,7 @@ class Semaforo
         int value, wakeUps;
         Mutex* mutex;
         Cond *cond;
-        Semaforo(int value);
+        Semaforo();
         virtual void wait() = 0;
         virtual void signal() = 0;
         virtual ~Semaforo();

@@ -8,6 +8,7 @@ class PersonalSemaforo : public Semaforo
 {
     public:
         PersonalSemaforo(int value);
+        PersonalSemaforo();
         virtual void wait();
         virtual void signal();
         virtual ~PersonalSemaforo();

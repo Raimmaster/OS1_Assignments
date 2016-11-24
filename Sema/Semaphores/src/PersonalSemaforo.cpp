@@ -1,11 +1,17 @@
 #include "PersonalSemaforo.h"
 
+PersonalSemaforo::PersonalSemaforo() : Semaforo::Semaforo()
+{
+
+}
+
+
 PersonalSemaforo::PersonalSemaforo(int value)
 {
     this->value = value;
     this->wakeUps = 0;
     this->mutex = new Mutex();
-    this->con = new Cond();
+    this->cond = new Cond();
 }
 
 PersonalSemaforo::~PersonalSemaforo()
@@ -17,28 +23,28 @@ PersonalSemaforo::~PersonalSemaforo()
 
 void PersonalSemaforo::wait()
 {
-    mutex_lock(this->mutex);
+    this->mutex->mutexLock();
     this->value--;
 
     if(this->value < 0){
         do {
-            condWait(this->cond, this->mutex);
+            this->cond->condWait(this->mutex);
         }while(this->wakeUps < 1);
         this->wakeUps--;
     }
 
-    mutexUnlock(this->mutex);
+    this->mutex->mutexUnlock();
 }
 
 void PersonalSemaforo::signal()
 {
-    mutexLock(this->mutex);
+    this->mutex->mutexLock();
     this->value++;
 
     if(this->value <= 0){
         this->wakeUps++;
-        condSignal(this->cond);
+        this->cond->condSignal();
     }
 
-    mutexUnlock(this->mutex);
+    this->mutex->mutexUnlock();
 }

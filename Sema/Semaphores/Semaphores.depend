@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1479964880 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/main.cpp
+	<iostream>
+
+1480005624 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Cond.cpp
+	"Cond.h"
+
+1480004655 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Cond.h
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+	"Mutex.h"
+
+1480002560 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Mutex.h
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+
+1480005640 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Mutex.cpp
+	"Mutex.h"
+
+1480005874 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/PersonalSemaforo.cpp
+	"PersonalSemaforo.h"
+
+1480005690 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/PersonalSemaforo.h
+	<Semaforo.h>
+
+1480005719 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Semaforo.h
+	"Mutex.h"
+	"Cond.h"
+
