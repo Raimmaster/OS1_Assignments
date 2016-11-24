@@ -34,14 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/C_Semaphore.h" />
 		<Unit filename="include/Cond.h" />
 		<Unit filename="include/Mutex.h" />
 		<Unit filename="include/PersonalSemaforo.h" />
+		<Unit filename="include/Philosophers.h" />
+		<Unit filename="include/ReaderWriter.h" />
 		<Unit filename="include/Semaforo.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/C_Semaphore.cpp" />
 		<Unit filename="src/Cond.cpp" />
 		<Unit filename="src/Mutex.cpp" />
 		<Unit filename="src/PersonalSemaforo.cpp" />
+		<Unit filename="src/Philosophers.cpp" />
+		<Unit filename="src/ReaderWriter.cpp" />
 		<Unit filename="src/Semaforo.cpp" />
 		<Extensions>
 			<envvars />
