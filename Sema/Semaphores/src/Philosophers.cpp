@@ -25,12 +25,14 @@ void Philosophers::eat(int philoIndex){
         hungry = i % 10 == 0;
         if(hungry){
             this->chopsticks[philoIndex]->wait();
+            cout<<"Philo picked up"<<philoIndex<<endl;
             this->chopsticks[(philoIndex + 1) % CANT_CHOPS]->wait();
+            cout<<"Philo picked up"<<((philoIndex + 1) % CANT_CHOPS)<<endl;
             cout<<"Philo: "<<philoIndex<<" eating!"<<endl;
             this->chopsticks[philoIndex]->signal();
             this->chopsticks[(philoIndex + 1) % CANT_CHOPS]->signal();
         }
-        sleep(1);
+        sleep(2);
     }
 }
 
