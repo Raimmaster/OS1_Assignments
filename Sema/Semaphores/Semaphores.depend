@@ -62,3 +62,66 @@
 1480015391 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Philosophers.cpp
 	"Philosophers.h"
 
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/main.cpp
+	<iostream>
+	"ReaderWriter.h"
+	"Philosophers.h"
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/ReaderWriter.h
+	<thread>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<iostream>
+	"C_Semaphore.h"
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/C_Semaphore.h
+	<semaphore.h>
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Philosophers.h
+	<thread>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<iostream>
+	"C_Semaphore.h"
+
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/C_Semaphore.cpp
+	"C_Semaphore.h"
+
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Cond.cpp
+	"Cond.h"
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Cond.h
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+	"Mutex.h"
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Mutex.h
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Mutex.cpp
+	"Mutex.h"
+
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/PersonalSemaforo.cpp
+	"PersonalSemaforo.h"
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/PersonalSemaforo.h
+	<Semaforo.h>
+
+1480018114 /home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Semaforo.h
+	"Mutex.h"
+	"Cond.h"
+
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/ReaderWriter.cpp
+	"ReaderWriter.h"
+
+1480018114 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Semaforo.cpp
+	"Semaforo.h"
+
+1480018469 source:/home/raim/Documents/Unitec/III Year/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Philosophers.cpp
+	"Philosophers.h"
+

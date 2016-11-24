@@ -18,26 +18,30 @@ Philosophers::~Philosophers()
     }
 }
 
-void Philosophers::eat(int philoIndex){
+void Philosophers::eat(int philoIndex)
+{
     bool hungry = false;
     for(int i = 0; ; ++i)
     {
-        hungry = i % 10 == 0;
-        if(hungry){
-            this->chopsticks[philoIndex]->wait();
-            cout<<"Philo "<<philoIndex<<" picked up"<<philoIndex<<endl;
-            this->chopsticks[(philoIndex + 1) % CANT_CHOPS]->wait();
-            cout<<"Philo "<<philoIndex<<" picked up"<<((philoIndex + 1) % CANT_CHOPS)<<endl;
-            cout<<"Philo: "<<philoIndex<<" eating!"<<endl;
-            sleep(1);
-            this->chopsticks[philoIndex]->signal();
-            this->chopsticks[(philoIndex + 1) % CANT_CHOPS]->signal();
-        }
+        hungry = i % CANT_CHOPS == 0;
+        cout<<"Hungry: "<<hungry<<endl;
+        //if(hungry){
+        this->chopsticks[philoIndex]->wait();
+        cout<<"Philo "<<philoIndex<<" picked up"<<philoIndex<<endl;
+        this->chopsticks[(philoIndex + 1) % CANT_CHOPS]->wait();
+        cout<<"Philo "<<philoIndex<<" picked up"<<((philoIndex + 1) % CANT_CHOPS)<<endl;
+        cout<<"Philo: "<<philoIndex<<" eating!"<<endl;
+        //usleep(1000);
+        this->chopsticks[philoIndex]->signal();
+        this->chopsticks[(philoIndex + 1) % CANT_CHOPS]->signal();
+        //}
+        sleep(1);
     }
 }
 
 
-void Philosophers::run(){
+void Philosophers::run()
+{
     thread* readers[CANT_CHOPS];
     thread* writers[CANT_CHOPS];
     for(int i = 0; i < CANT_CHOPS; ++i)
