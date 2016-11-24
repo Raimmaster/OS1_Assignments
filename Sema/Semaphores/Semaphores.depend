@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1480011072 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/main.cpp
+1480014065 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/main.cpp
 	<iostream>
 	"ReaderWriter.h"
+	"Philosophers.h"
 
 1480005624 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Cond.cpp
 	"Cond.h"
@@ -47,6 +48,17 @@
 1480011084 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/C_Semaphore.cpp
 	"C_Semaphore.h"
 
-1480012127 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/ReaderWriter.cpp
+1480013060 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/ReaderWriter.cpp
 	"ReaderWriter.h"
+
+1480015345 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Philosophers.h
+	<thread>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<iostream>
+	"C_Semaphore.h"
+
+1480015391 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Philosophers.cpp
+	"Philosophers.h"
 
