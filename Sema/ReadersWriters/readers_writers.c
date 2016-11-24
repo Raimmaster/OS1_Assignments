@@ -12,7 +12,7 @@ typedef struct
 {
 	char buffer[BUFF_SIZE];
 	sem_t can_read;
-	pthread_mutex_t mutex;
+	pthread_mutex_t read_mutex;
 } shared_buffer_t;
 
 void* reader_func(void*);
