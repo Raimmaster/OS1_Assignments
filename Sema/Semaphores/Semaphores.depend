@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1479964880 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/main.cpp
+1480011072 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/main.cpp
 	<iostream>
+	"ReaderWriter.h"
 
 1480005624 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Cond.cpp
 	"Cond.h"
@@ -28,4 +29,24 @@
 1480005719 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/Semaforo.h
 	"Mutex.h"
 	"Cond.h"
+
+1480005880 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/Semaforo.cpp
+	"Semaforo.h"
+
+1480011143 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/ReaderWriter.h
+	<thread>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<iostream>
+	"C_Semaphore.h"
+
+1480007423 /home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/include/C_Semaphore.h
+	<semaphore.h>
+
+1480011084 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/C_Semaphore.cpp
+	"C_Semaphore.h"
+
+1480012127 source:/home/raim/Documents/Unitec/2016/Q5/Siso I/OS1_Assignments/Sema/Semaphores/src/ReaderWriter.cpp
+	"ReaderWriter.h"
 

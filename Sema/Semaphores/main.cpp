@@ -1,9 +1,11 @@
 #include <iostream>
+#include "ReaderWriter.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    ReaderWriter rwSema;
+    rwSema.run();
     return 0;
 }
