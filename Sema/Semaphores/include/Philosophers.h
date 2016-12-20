@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <iostream>
 #include "C_Semaphore.h"
-#define CANT_CHOPS 5
+#define CANT_CHOPS 50
 
 using namespace std;
 

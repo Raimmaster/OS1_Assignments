@@ -92,6 +92,9 @@ void* consumer_func(void* args){
 	{
 		sem_wait(&shared_struct.full_slots);
 		pthread_mutex_lock(&shared_struct.mutex);
+		int valor;
+		sem_getvalue(&shared_struct.full_slots, &valor);
+		printf("Valor actual de lleno es %d \n", valor);
 		item = shared_struct.buffer[shared_struct.index_first_full_slot];
 		shared_struct.index_first_full_slot = 
 			(shared_struct.index_first_full_slot + 1) % BUFF_SIZE;

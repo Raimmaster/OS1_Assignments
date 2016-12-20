@@ -19,14 +19,11 @@ void ReaderWriter::readerFunc(){
     cout<<"Reader: "<<readerCount<<endl;
     while(true){
 
-        //cout<<"Gonna read!"<<endl;
         this->mutex->wait();
         if(++readerCount == 1){
             this->rwMutex->wait();
-            //cout<<"Plus reader!"<<endl;
         }
 
-        //cout<<"Probably stuck!"<<endl;
         this->mutex->signal();
 
         cout<<"Reader: "<<readerCount<<" reading: "<<buffer<<endl;
@@ -34,10 +31,8 @@ void ReaderWriter::readerFunc(){
         this->mutex->wait();
         if(--readerCount == 0){
             this->rwMutex->signal();
-            //cout<<"Minus reader!"<<endl;
         }
 
-        //cout<<"Or perhaps here!"<<endl;
         this->mutex->signal();
 
         sleep(1);
@@ -47,15 +42,14 @@ void ReaderWriter::readerFunc(){
 void ReaderWriter::writerFunc(){
     int writeCount = 0;
     while(true){
-        //cout<<"Enter!"<<endl;
         this->rwMutex->wait();
+ 
         string tempBuff = to_string(writeCount++);
         this->buffer = "Writer with ";
         this->buffer += tempBuff;
-        //cout<<"WRITINGGGG!!!"<<endl;
+
         this->rwMutex->signal();
 
-        //cout<<"Left!"<<endl;
         sleep(2);
     }
 }
